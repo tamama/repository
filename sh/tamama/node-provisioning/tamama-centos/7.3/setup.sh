@@ -1,5 +1,17 @@
 #!/bin/bash
 
+PutYumRepoMesosphere() {
+    curl -L https://raw.githubusercontent.com/tamama/repository/master/etc/yum.repos.d/mesosphere.repo \
+        -o /etc/yum.repos.d/mesosphere.repo
+
+    curl -L https://raw.githubusercontent.com/tamama/repository/master/etc/pki/rpm-gpg/RPM-GPG-KEY-mesosphere \
+        -o /etc/pki/rpm-gpg/RPM-GPG-KEY-mesosphere
+}
+
+PutYumRepo() {
+    PutYumRepoMesosphere $@
+}
+
 UpdateYum() {
     yum install -y epel-release
     yum repolist
@@ -28,6 +40,7 @@ YumInstallDnf() {
 }
 
 main() {
+    PutYumRepo $@
     UpdateYum $@
     YumInstallDnf $@
 }
