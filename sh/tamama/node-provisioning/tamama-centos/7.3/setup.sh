@@ -20,12 +20,12 @@ UpdateYum() {
 
 DownloadRpmDnf() {
     mkdir -p /usr/local/src/rpm/tamama-third-party/infrastructure/dnf/0.6.4
-    
-    curl -L https://tamama.000webhostapp.com/tamama/repository/rpm/tamama/third-party/infrastructure/dnf/0.6.4/dnf-conf-0.6.4-2.el7.noarch.rpm \
+
+    curl -L http://163.172.190.239:50080/tamama/repository/rpm/tamama/third-party/infrastructure/dnf/0.6.4/dnf-conf-0.6.4-2.el7.noarch.rpm \
         -o /usr/local/src/rpm/tamama-third-party/infrastructure/dnf/0.6.4/dnf-conf-0.6.4-2.el7.noarch.rpm
-    curl -L https://tamama.000webhostapp.com/tamama/repository/rpm/tamama/third-party/infrastructure/dnf/0.6.4/python-dnf-0.6.4-2.el7.noarch.rpm \
+    curl -L http://163.172.190.239:50080/tamama/repository/rpm/tamama/third-party/infrastructure/dnf/0.6.4/python-dnf-0.6.4-2.el7.noarch.rpm \
         -o /usr/local/src/rpm/tamama-third-party/infrastructure/dnf/0.6.4/python-dnf-0.6.4-2.el7.noarch.rpm
-    curl -L https://tamama.000webhostapp.com/tamama/repository/rpm/tamama/third-party/infrastructure/dnf/0.6.4/dnf-0.6.4-2.el7.noarch.rpm \
+    curl -L http://163.172.190.239:50080/tamama/repository/rpm/tamama/third-party/infrastructure/dnf/0.6.4/dnf-0.6.4-2.el7.noarch.rpm \
         -o /usr/local/src/rpm/tamama-third-party/infrastructure/dnf/0.6.4/dnf-0.6.4-2.el7.noarch.rpm
 }
 
