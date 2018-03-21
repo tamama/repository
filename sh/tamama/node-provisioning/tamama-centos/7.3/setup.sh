@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SetLocale() {
-    echo -e "LANG=en_US.UTF-8\nLC_ALL=C\nLC_CTYPE=en_US.UTF-8\n\nexport LANG\nexport LC_ALL\nexport LC_CTYPE\n" > /etc/profile.d/setlocale.sh
+    echo -e "LANG=en_US.UTF-8\nLC_ALL=C\n\nexport LANG\nexport LC_ALL" > /etc/profile.d/setlocale.sh
     chmod 755 /etc/profile.d/setlocale.sh
     /etc/profile.d/setlocale.sh
 }
