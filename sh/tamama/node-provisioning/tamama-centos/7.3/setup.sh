@@ -1,5 +1,11 @@
 #!/bin/bash
 
+SetLocale() {
+    echo -e "LANG=en_US.UTF-8\nLC_ALL=C\nLC_CTYPE=en_US.UTF-8\n\nexport LANG\nexport LC_ALL\nexport LC_CTYPE\n" > /etc/profile.d/setlocale.sh
+    chmod 755 /etc/profile.d/setlocale.sh
+    /etc/profile.d/setlocale.sh
+}
+
 PutYumRepoMesosphere() {
     curl -L https://raw.githubusercontent.com/tamama/repository/master/etc/yum.repos.d/mesosphere.repo \
         -o /etc/yum.repos.d/mesosphere.repo
@@ -40,6 +46,7 @@ YumInstallDnf() {
 }
 
 main() {
+    SetLocale $@
     PutYumRepo $@
     UpdateYum $@
     YumInstallDnf $@
