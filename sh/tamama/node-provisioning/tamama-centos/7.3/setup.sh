@@ -35,6 +35,10 @@ DownloadRpmDnf() {
         -o /usr/local/src/rpm/tamama-third-party/infrastructure/dnf/0.6.4/dnf-0.6.4-2.el7.noarch.rpm
 }
 
+YumInstallKernelDevel() {
+    yum install -y kernel-devel
+}
+
 YumInstallDnf() {
     yum install -y python-hawkey python-libcomps python-librepo
 
@@ -49,6 +53,7 @@ main() {
     SetLocale $@
     PutYumRepo $@
     UpdateYum $@
+    YumInstallKernelDevel $@
     YumInstallDnf $@
 }
 
