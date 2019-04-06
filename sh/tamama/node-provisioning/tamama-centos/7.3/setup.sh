@@ -39,7 +39,11 @@ YumInstallKernelDevel() {
     yum install -y kernel-devel
 }
 
-YumInstallDnf() {
+YumInstallDnf0() {
+    yum install -y dnf
+}
+
+YumInstallDnf1() {
     yum install -y python-hawkey python-libcomps python-librepo
 
     DownloadRpmDnf
@@ -54,7 +58,8 @@ main() {
     PutYumRepo $@
     UpdateYum $@
     YumInstallKernelDevel $@
-    YumInstallDnf $@
+    YumInstallDnf0 $@
+    #YumInstallDnf1 $@
 }
 
 if [ "${BASH_SOURCE[0]}" == "$0" ]; then
